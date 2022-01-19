@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$white: #ffffff;
+$violet: #fbf4ff;
+$purple: #3d1182;
+$yellow: #ffd217;
+$dark-vialet: #3d1182;
+$red: #d0021b;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+a,
+ul {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: $violet;
+  border-radius: 24px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $purple;
+  outline: 1px solid $purple;
+  border-radius: 28px;
+}
+
+.title {
+  @extend .font-weight-500;
+  background-color: $violet;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 44px;
+  color: $purple;
+  font-size: 17px;
+  line-height: 17px;
+}
+
+.button {
+  border: none;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background: $white;
+  border-color: $white;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+
+  &__icon {
+    padding: 0;
+    margin: 0;
+  }
+
+  &--text {
+    font-family: 'Fira Sans';
+    font-size: 16px;
+    font-weight: 500;
+    color: #25213b;
+  }
+
+  &__yellow {
+    background: $yellow;
+    border-color: $yellow;
+
+    &--outline {
+      background-color: $white;
+      border-color: $yellow;
+
+      .button__yellow--text {
+        color: $yellow;
+      }
+    }
+
+    &--text {
+      color: $white;
+    }
+  }
+
+  &__purple {
+    background: $purple;
+    border-color: $purple;
+
+    &--text {
+      color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__red {
+    background: $red;
+    border-color: $red;
+
+    &--outline {
+      background-color: $white;
+      border-color: $red;
+
+      .button__red--text {
+        color: $red;
+      }
+    }
+
+    &--text {
+      color: $white;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+
+  &__label {
+    font-family: Fira Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #25213b;
+    display: flex;
+    align-items: center;
+
+    &--icon {
+      margin-left: 5px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    background: rgba(244, 245, 246, 0.5);
+    border: 1px solid rgba(244, 245, 246, 0.5);
+    border-radius: 10px;
+    color: rgba(37, 33, 59, 1);
+    box-sizing: border-box;
+    font-size: 14px;
+
+    &[type='text']:focus {
+      outline: #3d1182;
+      border: 1px solid #3d1182;
+    }
+  }
+
+  &__error {
+    outline: $red;
+    border: 1px solid $red;
+
+    &--text {
+      color: $red;
+    }
+  }
+}
+
+.disable {
+  color: #b8b8b8;
+}
